@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script defer src="NewJS.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="form.css">  
+</head>
+<body ng-app="myApp" ng-controller="loginCtrl">
+    <div class="loginbox">
+        <img src="logo.png" class="avatar">
+        <h1>Login</h1>    
+        <form id="myform">
+            <div><label for="name" id="name">Name:</label>
+            <input type="text" id="name1" name="name" placeholder="*Enter valid name" onkeyup="validateName()" required/> </div><br>
+            <span id="name_error"></span>
+
+            <div><label for="email" id="email">Email:</label>
+            <input type="email" id="email1" name="email" placeholder="*Enter Christ email ID" onkeyup='validateEmail()' required/></div><br>
+            <span id="email_error"></span>
+            <div>
+                <label for="myform_phone" id="phone">Phone:</label>
+                <input type="number" id="phone1" name="phone" placeholder="*Enter valid phone number" onkeyup="validatePhone()" required/>
+                <br><span id="phone_error" ></span>
+            </div><br>
+            
+            <div>
+                <label for="psw" id="password">Password</label>
+                <input type="password" id="psw" name="psw" placeholder="*Enter password"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+            </div><br>
+            
+            <div><button type="submit" id="submit" s onclick="cookie_func()" >Login</button>
+            <button type="reset" value="Reset" onclick="clearResult()">Cancel</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<div id="message">
+  <h3>Password must contain the following:</h3>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+        
+<!--
+<div class="wrapper">
+    <div class="content1">
+      <header>Cookies Consent</header>
+      <p>This website use cookies to ensure you get the best experience on our website.</p>
+      <div class="buttons">
+        <button class="item">I understand</button>
+        <a href="#" class="item">Learn more</a>
+      </div>
+    </div>
+  </div>        
+-->
+
+</body>
+</html>
